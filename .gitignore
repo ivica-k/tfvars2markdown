@@ -1,0 +1,17 @@
+__pycache__/
+*.py[cod]
+.Python
+build/
+dist/
+eggs/
+.eggs/
+sdist/
+wheels/
+venv/
+.venv/
+pip-wheel-metadata/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST

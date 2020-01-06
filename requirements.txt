@@ -1,0 +1,2 @@
+python-hcl2==0.2.0
+pytablewriter==0.46.1
