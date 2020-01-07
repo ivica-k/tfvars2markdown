@@ -1,6 +1,12 @@
 #!/usr/bin/env python
 
+import os
+import sys
+
 from setuptools import setup
+from setuptools.command.install import install
+
+VERSION = "0.0.3"
 
 
 def get_install_reqs():
@@ -13,9 +19,21 @@ def get_long_description():
         return readme_file.read()
 
 
+class VerifyVersionCommand(install):
+    """Custom command to verify that the git tag matches our version"""
+    description = 'verify that the git tag matches our version'
+
+    def run(self):
+        tag = os.getenv('CIRCLE_TAG')
+
+        if tag != VERSION:
+            info = f"Git tag '{tag}' does not match the version of this app '{VERSION}'"
+            sys.exit(info)
+
+
 setup(
     name="tfvars2markdown",
-    version="0.0.3",
+    version=VERSION,
     description="Converts Terraform 0.12+ variables file into a Markdown table",
     long_description=get_long_description(),
     long_description_content_type="text/markdown",
@@ -34,4 +52,7 @@ setup(
         "Operating System :: OS Independent",
     ],
     python_requires='>=3.6',
+    cmdclass={
+        'verify': VerifyVersionCommand,
+    }
 )
