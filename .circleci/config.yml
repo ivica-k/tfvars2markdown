@@ -39,7 +39,10 @@ jobs:
     docker:
       - image: circleci/python:3.8-buster
 
+    working_directory: ~/repo
+
     steps:
+      - checkout
       - run:
           name: verify git tag vs. version
           command: |
