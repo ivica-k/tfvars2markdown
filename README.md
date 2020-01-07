@@ -1,5 +1,7 @@
 # tfvars2markdown
 
+[![CircleCI](https://circleci.com/gh/ivica-k/tfvars2markdown/tree/master.svg?style=svg)](https://circleci.com/gh/ivica-k/tfvars2markdown/tree/master)
+
 Converts Terraform 0.12+ variables file into a Markdown table
 
 - [tfvars2markdown](#tfvars2markdown)
