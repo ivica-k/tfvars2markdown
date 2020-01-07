@@ -72,6 +72,7 @@ $ tfvars2markdown --no-ticks vars.tf
 
 #### Different heading
 ```
+$ tfvars2markdown --heading "my input vars" vars.tf
 # my input vars
 |    Name    |                                      Description                                      |      Type      |         Default         | Required |
 |------------|---------------------------------------------------------------------------------------|:--------------:|:-----------------------:|:--------:|
